@@ -15,4 +15,4 @@ namespace Garage2._0.Models
         public int NumberOfWheels { get; set; }
 
     }
-}
+} //staffan was here
