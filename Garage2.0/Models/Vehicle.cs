@@ -16,3 +16,5 @@ namespace Garage2._0.Models
 
     }
 } //staffan was here
+
+// Staffan was here again...
