@@ -13,13 +13,63 @@ namespace Garage2._0.Controllers
 {
     public class VehiclesController : Controller
     {
-        private GarageContext db = new GarageContext();
+        GarageContext db = new GarageContext();
 
         // GET: Vehicles
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.Vehicles.ToList());
+        //}
+
+        
+        public ActionResult Index(string searchTerm = null)
         {
-            return View(db.Vehicles.ToList());
+        
+            if (searchTerm == null || searchTerm == "")
+            {
+                return View(db.Vehicles.ToList());               
+            }
+            else
+            {
+                var model =
+                    from v in db.Vehicles
+                    where v.RegNumber == searchTerm
+                    select v;
+
+                return View(model);
+            }
         }
+
+
+
+
+            //var model =
+            //    db.Vehicles
+            //       .OrderByDescending(v => v.RegNumber)
+            //       .Where(v => searchTerm == null || v.RegNumber.Equals(searchTerm))
+            //       .Select(v);
+                            
+
+
+
+//            (Typ, RegNr, Märke, modell)
+            
+       
+
+       
+        /*
+         * .Select(v => new VehicleViewModel
+                   {
+                       Id = r.Id,
+                       Name = r.Name,
+                       City = r.City,
+                       Country = r.Country,
+                       CountOfReviews = r.Reviews.Count()
+                   }   */
+
+
+
+
 
         // GET: Vehicles/Details/5
         public ActionResult Details(int? id)

@@ -9,6 +9,30 @@
 <p>
     @Html.ActionLink("Parkera fordon", "Create")
 </p>
+
+
+<form method="get">
+
+    <input type="search" name="searchTerm" class="searchform" />
+    <input type="submit" value="Sök på reg-nummer" />
+</form>
+<br />
+
+@*@foreach (var item in Model)
+{
+    <div>
+        <h4>@item.Name</h4>
+        <div>
+            @item.City, @item.Country
+        </div>
+        <div>
+            Reviews: @item.CountOfReviews
+        </div>
+        <hr />
+    </div>
+}*@
+
+
 <table class="table">
     <tr>
         <th>
