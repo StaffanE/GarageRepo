@@ -24,6 +24,7 @@ namespace Garage2._0.Controllers
         
         public ActionResult Index(string searchTerm = null)
         {
+            ViewBag.SearchExpression = searchTerm;
         
             if (searchTerm == null || searchTerm == "")
             {
