@@ -143,6 +143,24 @@ namespace Garage2._0.Controllers
             return View(vehicle);
         }
 
+
+
+        // GET: Vehicles/Receipt/5
+        public ActionResult Receipt(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Vehicle vehicle = db.Vehicles.Find(id);
+            if (vehicle == null)
+            {
+                return HttpNotFound();
+            }
+            return View(vehicle);
+        }
+
+
         // GET: Vehicles/Delete/5
         public ActionResult Delete(int? id)
         {
