@@ -133,6 +133,14 @@
     <Compile Include="Migrations\201510210755276_Initial.Designer.cs">
       <DependentUpon>201510210755276_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510221007187_CheckOutTime.cs" />
+    <Compile Include="Migrations\201510221007187_CheckOutTime.Designer.cs">
+      <DependentUpon>201510221007187_CheckOutTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510221012204_nullified_CheckOutTime.cs" />
+    <Compile Include="Migrations\201510221012204_nullified_CheckOutTime.Designer.cs">
+      <DependentUpon>201510221012204_nullified_CheckOutTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,6 +203,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201510210755276_Initial.resx">
       <DependentUpon>201510210755276_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510221007187_CheckOutTime.resx">
+      <DependentUpon>201510221007187_CheckOutTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510221012204_nullified_CheckOutTime.resx">
+      <DependentUpon>201510221012204_nullified_CheckOutTime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
