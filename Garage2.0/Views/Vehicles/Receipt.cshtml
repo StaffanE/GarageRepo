@@ -3,6 +3,19 @@
 @{
     ViewBag.Title = "KVITTO";
     Layout = "";
+
+    DateTime dt = DateTime.Now;
+    ViewBag.dt = dt;
+
+   // DateTime at = model.ArrivalTime;
+    
+    TimeSpan pt = dt - Model.ArrivalTime;
+    ViewBag.ParkingTime = pt.Hours + ":" + pt.Minutes;
+
+    
+    
+    //Html.Display Model.ArrivalTime;
+    
 }
 <!DOCTYPE html>
 <html>
@@ -87,8 +100,22 @@ body {
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.CheckOutTime)
+                    @ViewBag.dt
                 </dd>
+                <dt>
+                    Parkerad tid
+                </dt>
+
+                <dd>
+                    @ViewBag.ParkingTime
+                </dd>
+                @*<dt>
+                    Parkeringsavgift (100kr per påbörjad minut)
+                </dt>
+
+                <dd>
+                    @ViewBag.Cost
+                </dd>*@                
 
             </dl>
 

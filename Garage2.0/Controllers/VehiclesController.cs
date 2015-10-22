@@ -148,6 +148,8 @@ namespace Garage2._0.Controllers
 
 
 
+
+
         // GET: Vehicles/Receipt/5
         public ActionResult Receipt(int? id)
         {
@@ -160,6 +162,7 @@ namespace Garage2._0.Controllers
             {
                 return HttpNotFound();
             }
+
             return View(vehicle);
         }
 
@@ -188,11 +191,14 @@ namespace Garage2._0.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Vehicle vehicle = db.Vehicles.Find(id);
+           // vehicle.CheckOutTime = DateTime.Now;
+
             //db.Vehicles.Remove(vehicle);
-            vehicle.CheckOutTime = DateTime.Now;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
 
         protected override void Dispose(bool disposing)
         {
