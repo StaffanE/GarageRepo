@@ -30,14 +30,12 @@ namespace Garage2._0.Migrations
 
             context.Vehicles.AddOrUpdate(
               v => v.RegNumber,
-              new Vehicle { VehicleType = VehicleEnum.Bil, RegNumber = "SCD918", Color = "Blå", Brand = "Volvo", Make = "V70", NumberOfWheels = 4, ArrivalTime = DateTime.Now },
-              new Vehicle { VehicleType = VehicleEnum.Båt, RegNumber = "DFC234", Color = "Grön", Brand = "Linjett", Make = "33", NumberOfWheels = 0, ArrivalTime = DateTime.Now },
-              new Vehicle { VehicleType = VehicleEnum.MC, RegNumber = "KFL423", Color = "Svart", Brand = "Yamaha", Make = "T87", NumberOfWheels = 2, ArrivalTime = DateTime.Now },
-              new Vehicle { VehicleType = VehicleEnum.Bil, RegNumber = "FGH234", Color = "Röd", Brand = "Ferrari", Make = "Testarossa", NumberOfWheels = 4, ArrivalTime = DateTime.Now },
-              new Vehicle { VehicleType = VehicleEnum.Trampcykel, RegNumber = "GFD234", Color = "Vit", Brand = "Crescent", Make = "Blixten", NumberOfWheels = 2, ArrivalTime = DateTime.Now },
-              new Vehicle { VehicleType = VehicleEnum.Flygplan, RegNumber = "DFR342", Color = "Randig", Brand = "Saab", Make = "JAS 39 Gripen", NumberOfWheels = 3, ArrivalTime = DateTime.Now }
-
-
+              new Vehicle { VehicleType = VehicleEnum.Bil, RegNumber = "SCD918", Color = "Blå", Brand = "Volvo", Make = "V70", NumberOfWheels = 4 }, ///, ArrivalTime = DateTime.Now },
+              new Vehicle { VehicleType = VehicleEnum.Båt, RegNumber = "DFC234", Color = "Grön", Brand = "Linjett", Make = "33", NumberOfWheels = 0 }, ///, ArrivalTime = DateTime.Now },
+              new Vehicle { VehicleType = VehicleEnum.MC, RegNumber = "KFL423", Color = "Svart", Brand = "Yamaha", Make = "T87", NumberOfWheels = 2 }, ///, ArrivalTime = DateTime.Now },
+              new Vehicle { VehicleType = VehicleEnum.Bil, RegNumber = "FGH234", Color = "Röd", Brand = "Ferrari", Make = "Testarossa", NumberOfWheels = 4 }, ///, ArrivalTime = DateTime.Now },
+              new Vehicle { VehicleType = VehicleEnum.Trampcykel, RegNumber = "GFD234", Color = "Vit", Brand = "Crescent", Make = "Blixten", NumberOfWheels = 2 }, ///, ArrivalTime = DateTime.Now },
+              new Vehicle { VehicleType = VehicleEnum.Flygplan, RegNumber = "DFR342", Color = "Randig", Brand = "Saab", Make = "JAS 39 Gripen", NumberOfWheels = 3} ///, ArrivalTime = DateTime.Now }
             );
 
         }
