@@ -11,6 +11,7 @@ namespace Garage2._0.Models
     public class Vehicle
     {
         private DateTime _date = DateTime.Now;
+
         public int Id { get; set; }
         [Display(Name = "Fordonstyp")]
         public VehicleEnum VehicleType  { get; set; }
@@ -27,9 +28,8 @@ namespace Garage2._0.Models
         [Display(Name = "Parkerad (ankomsttid)")]
         public DateTime ArrivalTime {get { return _date; }
                                      set { _date = value; }}
+        [Display(Name = "Utcheckningstid")]
+        public DateTime? CeckOutTime {get;set;}
+        }
+     
     }
-    public class ThisMoment
-    {
-        DateTime parkedAtTime = DateTime.Now;
-    }
-} 
