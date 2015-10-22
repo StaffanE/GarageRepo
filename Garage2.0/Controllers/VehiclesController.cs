@@ -127,6 +127,8 @@ namespace Garage2._0.Controllers
             return View(vehicle);
         }
 
+
+
         // POST: Vehicles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -143,6 +145,26 @@ namespace Garage2._0.Controllers
             return View(vehicle);
         }
 
+
+
+
+        // GET: Vehicles/Receipt/5
+        public ActionResult Receipt(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Vehicle vehicle = db.Vehicles.Find(id);
+            if (vehicle == null)
+            {
+                return HttpNotFound();
+            }
+            return View(vehicle);
+        }
+
+
+
         // GET: Vehicles/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -158,13 +180,16 @@ namespace Garage2._0.Controllers
             return View(vehicle);
         }
 
+
+
         // POST: Vehicles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Vehicle vehicle = db.Vehicles.Find(id);
-            db.Vehicles.Remove(vehicle);
+            //db.Vehicles.Remove(vehicle);
+            vehicle.CheckOutTime = DateTime.Now;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

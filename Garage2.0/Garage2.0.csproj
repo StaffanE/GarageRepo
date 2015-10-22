@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201510221012204_nullified_CheckOutTime.Designer.cs">
       <DependentUpon>201510221012204_nullified_CheckOutTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510221231439_CheckOut.cs" />
+    <Compile Include="Migrations\201510221231439_CheckOut.Designer.cs">
+      <DependentUpon>201510221231439_CheckOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -209,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510221012204_nullified_CheckOutTime.resx">
       <DependentUpon>201510221012204_nullified_CheckOutTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510221231439_CheckOut.resx">
+      <DependentUpon>201510221231439_CheckOut.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
