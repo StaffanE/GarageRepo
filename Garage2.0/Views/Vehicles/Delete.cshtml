@@ -66,14 +66,18 @@
         <dd>
             @Html.DisplayFor(model => model.ArrivalTime)
         </dd>
-
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
     </dl>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Checka ut" class="btn btn-default" /> |
+            <input type="submit" value="Checka ut" class="btn btn-default" onclick="window.open('@Url.Action("Receipt", "Vehicles")/@Html.DisplayFor(model => model.Id)')" /> |
+            @*<input type="submit" value="Checka ut" class="btn btn-default" onclick="window.open='@Url.Action("Receipt", "Vehicles")/@Html.DisplayFor(model => model.Id)'" />*@
+
             @Html.ActionLink("Tillbaka till garaget", "Index")
         </div>
     }
