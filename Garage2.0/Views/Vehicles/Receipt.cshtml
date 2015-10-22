@@ -11,83 +11,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Garage 2.0</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <style type="text/css">
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 55px;
+    background-color: #ffffff;
+        
+
+    }
+
+    </style>
+
 </head>
 <body>
-    <h2>KVITTO</h2>
-
-    <h3>Utskriftsvänligt kvitto.</h3>
     <div>
-        <h4>Fordon</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.VehicleType)
-            </dt>
+        <h2>KVITTO</h2>
 
-            <dd>
-                @Html.DisplayFor(model => model.VehicleType)
-            </dd>
+        <h3>Utskriftsvänligt kvitto.</h3>
+        <div>
+            <h4>Fordon</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.VehicleType)
+                </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.RegNumber)
-            </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.VehicleType)
+                </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.RegNumber)
-            </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.RegNumber)
+                </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Color)
-            </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.RegNumber)
+                </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.Color)
-            </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Color)
+                </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Brand)
-            </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Color)
+                </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.Brand)
-            </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Brand)
+                </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Make)
-            </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Brand)
+                </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.Make)
-            </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Make)
+                </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.NumberOfWheels)
-            </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Make)
+                </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.NumberOfWheels)
-            </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.NumberOfWheels)
+                </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.ArrivalTime)
-            </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.NumberOfWheels)
+                </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.ArrivalTime)
-            </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ArrivalTime)
+                </dt>
 
-        </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.ArrivalTime)
+                </dd>
 
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
+            </dl>
 
-            @*<div class="form-actions no-color">
-                    <input type="submit" value="Checka ut" class="btn btn-default" onclick="window.open('@Url.Action("Receipt", "Receipt")')" /> |
-                    @Html.ActionLink("Tillbaka till garaget", "Index")
-                </div>*@
-        }
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+            <input type="button" value="Skriv ut" class="btn btn-default" onclick="window.print();"  />
+                @*<div class=" form-actions no-color">
+                        <input type="submit" value="Checka ut" class="btn btn-default" onclick="window.open('@Url.Action("Receipt", "Receipt")')" /> |
+                        @Html.ActionLink("Tillbaka till garaget", "Index")
+                    </div>*@
+            }
+        </div>
     </div>
 </body>
 </html>
