@@ -10,7 +10,15 @@
    // DateTime at = model.ArrivalTime;
     
     TimeSpan pt = dt - Model.ArrivalTime;
-    ViewBag.ParkingTime = pt.Hours + ":" + pt.Minutes;
+    
+    
+    ViewBag.ParkingTime = pt.Hours + ":";
+        
+    
+        if (pt.Minutes<10) {
+            ViewBag.ParkingTime = ViewBag.ParkingTime + "0" + pt.Minutes;
+        }
+        
 
     
     
@@ -96,7 +104,7 @@ body {
                     @Html.DisplayFor(model => model.ArrivalTime)
                 </dd>
                 <dt>
-                    @Html.DisplayNameFor(model => model.CheckOutTime)
+                    Utcheckningstid
                 </dt>
 
                 <dd>
