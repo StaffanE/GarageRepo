@@ -29,7 +29,7 @@ namespace Garage2._0.Models
         public DateTime ArrivalTime {get { return _date; }
                                      set { _date = value; }}
         [Display(Name = "Utcheckningstid")]
-        public DateTime? CeckOutTime {get;set;}
+        public DateTime? CheckOutTime {get;set;}
         }
      
     }
