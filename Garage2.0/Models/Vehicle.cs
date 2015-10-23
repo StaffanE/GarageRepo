@@ -18,8 +18,10 @@ namespace Garage2._0.Models
 
         [Display(Name = "Reg. nummer")]
         [Required]
-        [StringLength(6, MinimumLength = 6)]
-        [RegularExpression(@"^[\S]*$", ErrorMessage = "Fältet får ej innehålla mellanslag.")]
+        [StringLength(6, MinimumLength = 6, ErrorMessage = "Fältet måste innehålla 6 tecken.")]
+        [RegularExpression(@"^[\S]*$",  ErrorMessage = "Fältet får ej innehålla mellanslag.")]
+        //[RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "Invalid First Name")]
+
         public string RegNumber { get; set; }
 
         [Display(Name = "Färg")]
