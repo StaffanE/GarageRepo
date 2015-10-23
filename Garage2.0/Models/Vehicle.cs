@@ -20,7 +20,7 @@ namespace Garage2._0.Models
         [Required]
         [StringLength(6, MinimumLength = 6, ErrorMessage = "Fältet måste innehålla 6 tecken.")]
         [RegularExpression(@"^[\S]*$",  ErrorMessage = "Fältet får ej innehålla mellanslag.")]
-        //[RegularExpression("^([a-zA-Z0-9 .&'-]+)$", ErrorMessage = "Invalid First Name")]
+        //[RegularExpression("^[-_,A-Za-z0-9]$", ErrorMessage = "Fältet får ej innehålla otillåtna tecken.")]
 
         public string RegNumber { get; set; }
 
