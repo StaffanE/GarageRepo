@@ -28,8 +28,6 @@ namespace Garage2._0.Models
         [Display(Name = "Parkerad (ankomsttid)")]
         public DateTime ArrivalTime {get { return _date; }
                                      set { _date = value; }}
-        [Display(Name = "Utcheckningstid")]
-        public DateTime? CheckOutTime {get;set;}
-        }
+      }
      
     }

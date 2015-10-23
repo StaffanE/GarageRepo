@@ -10,14 +10,26 @@
    // DateTime at = model.ArrivalTime;
     
     TimeSpan pt = dt - Model.ArrivalTime;
-    
-    
-    ViewBag.ParkingTime = pt.Hours + ":";
+
+
+    if (pt.Hours < 10 && pt.Minutes < 10)
+    {
+        ViewBag.ParkingTime = "0" + pt.Hours + ":" + "0" + pt.Minutes;
+    } 
+    else if (pt.Minutes < 10)
+    {
+        ViewBag.ParkingTime = pt.Hours + ":" + "0" + pt.Minutes;
+    }     
+    else if (pt.Hours < 10)
+    {
+        ViewBag.ParkingTime = "0" + pt.Hours + ":" + + pt.Minutes;
+    }
+    else
+    {
+        ViewBag.ParkingTime = pt.Hours + ":" + pt.Minutes;
+    }
         
-    
-        if (pt.Minutes<10) {
-            ViewBag.ParkingTime = ViewBag.ParkingTime + "0" + pt.Minutes;
-        }
+        
         
 
     

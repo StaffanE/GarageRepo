@@ -7,13 +7,24 @@
 
 <h3>Garaget
 </h3>
-<button onclick="location.href='@Url.Action("Create", "Vehicles")'">
-    Parkera fordon
-</button>
-<form method="get">
-    <input type="submit" value="Sök på reg-nummer" />
-    <input type="search" name="searchTerm" class="searchform" value="@ViewBag.SearchExpression" />
-</form>
+<table>
+    <tr>
+        <td>
+            <button onclick="location.href='@Url.Action("Create", "Vehicles")'"> Parkera fordon </button>
+        </td>
+        <td width="500px">
+            <form method="get">
+                <input type="search" name="searchTerm" class="searchform" value="@ViewBag.SearchExpression" style="display:inline" />
+                <input type="submit" value="Sök på reg-nummer" style="display:inline" />
+            </form>
+        </td>
+
+    </tr>
+
+</table>
+
+<div></div>
+
 
 <br />
 
@@ -25,9 +36,7 @@
         <th>
             @Html.DisplayNameFor(model => model.RegNumber)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Color)
-        </th>
+        
         <th>
             @Html.DisplayNameFor(model => model.Brand)
         </th>
@@ -45,9 +54,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.RegNumber)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.Brand)
         </td>

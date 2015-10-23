@@ -191,9 +191,7 @@ namespace Garage2._0.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Vehicle vehicle = db.Vehicles.Find(id);
-           // vehicle.CheckOutTime = DateTime.Now;
-
-            //db.Vehicles.Remove(vehicle);
+            db.Vehicles.Remove(vehicle);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
