@@ -34,7 +34,8 @@ namespace Garage2._0.Controllers
             {
                 var model =
                     from v in db.Vehicles
-                    where v.RegNumber == searchTerm
+                    where (v.RegNumber.Contains(searchTerm) || v.Brand.Contains(searchTerm) || v.Color.Contains(searchTerm) || v.Make.Contains(searchTerm))
+                    //where v.RegNumber == searchTerm
                     select v;
 
                 return View(model);
