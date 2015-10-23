@@ -7,7 +7,7 @@
 
 <h3>Garaget
 </h3>
-<table>
+@*<table>
     <tr>
         <td>
             <button onclick="location.href='@Url.Action("Create", "Vehicles")'"> Parkera fordon </button>
@@ -21,9 +21,21 @@
 
     </tr>
 
-</table>
+</table>*@
 
-<div></div>
+<div id="block_container">
+    <div id="block1">
+        <button onclick="location.href='@Url.Action("Create", "Vehicles")'"> Parkera fordon </button>
+    </div>
+
+    <div id="block2">
+        <form method="get">
+            <input type="search" name="searchTerm" class="searchform" value="@ViewBag.SearchExpression" style="display:inline" />
+            <input type="submit" value="Sök på reg-nummer" style="display:inline" />
+        </form>
+    </div>
+</div>
+
 
 
 <br />
