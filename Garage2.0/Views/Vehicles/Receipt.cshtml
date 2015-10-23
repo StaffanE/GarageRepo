@@ -142,8 +142,10 @@ body {
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
-
-            <input type="button" value="Skriv ut" class="btn btn-default" onclick="window.print();"  />
+    <div class="row">
+        <input type="button" value="Skriv ut" class="btn btn-default" onclick="window.print();" />
+        <input type="button" value="Stäng" class="btn btn-default" onclick="window.close();;" />
+    </div>
                 @*<div class=" form-actions no-color">
                         <input type="submit" value="Checka ut" class="btn btn-default" onclick="window.open('@Url.Action("Receipt", "Receipt")')" /> |
                         @Html.ActionLink("Tillbaka till garaget", "Index")
