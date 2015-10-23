@@ -149,6 +149,10 @@
     <Compile Include="Migrations\201510221440270_Removed_CheckOutTime.Designer.cs">
       <DependentUpon>201510221440270_Removed_CheckOutTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510230957392_Vehicles Validation.cs" />
+    <Compile Include="Migrations\201510230957392_Vehicles Validation.Designer.cs">
+      <DependentUpon>201510230957392_Vehicles Validation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,6 +160,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\StyleSheet.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -241,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510221440270_Removed_CheckOutTime.resx">
       <DependentUpon>201510221440270_Removed_CheckOutTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510230957392_Vehicles Validation.resx">
+      <DependentUpon>201510230957392_Vehicles Validation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
