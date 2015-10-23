@@ -15,16 +15,32 @@ namespace Garage2._0.Models
         public int Id { get; set; }
         [Display(Name = "Fordonstyp")]
         public VehicleEnum VehicleType  { get; set; }
+
         [Display(Name = "Reg. nummer")]
+        [Required]
+        [StringLength(6, MinimumLength = 6)]
         public string RegNumber { get; set; }
+
         [Display(Name = "Färg")]
+        [Required]
+        [StringLength(16)]
         public string Color { get; set; }
+
+
         [Display(Name = "Fabrikat")]
+        [Required]
+        [StringLength(16)]
         public string Brand { get; set; }
+
         [Display(Name = "Modell")]
+        [Required]
+        [StringLength(32)]
         public string Make { get; set; }
+
         [Display(Name = "Antal hjul")]
+        [Range(0,12)]
         public int NumberOfWheels { get; set; }
+
         [Display(Name = "Parkerad (ankomsttid)")]
         public DateTime ArrivalTime {get { return _date; }
                                      set { _date = value; }}
