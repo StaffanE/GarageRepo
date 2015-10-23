@@ -5,6 +5,17 @@
 @{
     ViewBag.Message = "Våra kontaktuppgifter:";
 }
+<div class="container-fluid">
+    <div class="row">
+        <div class="fill-screen" style="background-image: url(../../Images/Parkeringsbilder/parkering6.jpeg)">
+        </div>
+    </div>
+    <!--<div class="row content-filler">
+    </div>
+    <div class="row">
+        <div class="fill-screen fixed-attachment" style="background-image: url(images/bootstrap/elk.jpg)">
+        </div>
+    </div>-->
 
 <h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
@@ -15,8 +26,29 @@
     <abbr title="Phone">Tel: Ja...</abbr>
     
 </address>
-
+    @*<img src="../../Images/Parkeringsbilder/parkering6.jpeg" alt="parkering6" height="1050" width="1680" />*@
 <address>
     <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@JMSGarage.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@JMSGarage.com</a>
 </address>
+</div>
+
+<footer class="container-fluid">
+    <h1>FOOTER</h1>
+</footer>
+
+<!-- FÖR ATT FÅ NAVBAR ATT FUNGERA -->
+<script src="../../Scripts/jquery-1.10.2.min.js"></script>
+<script src="../../Scripts/bootstrap.min.js"></script>
+<script src="../../Scripts/classie.js"></script>
+<script src="../../Scripts/cbpAnimatedHeader.js"></script>
+
+<!-- END NAV BAR -->
+
+<script>
+		$(function () {
+			$(window).on("load resize", function () {
+				$(".fill-screen").css("height", window.innerHeight);
+			});
+		});
+</script>
