@@ -7,14 +7,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Garage2._0.Models
 {
-    public enum VehicleEnum { Bil, Båt, MC, Flygplan, Trampcykel}
+
     public class Vehicle
     {
         private DateTime _date = DateTime.Now;
 
         public int Id { get; set; }
-        [Display(Name = "Fordonstyp")]
-        public VehicleEnum VehicleType  { get; set; }
 
         [Display(Name = "Reg. nummer")]
         [Required]
@@ -46,6 +44,15 @@ namespace Garage2._0.Models
         [Display(Name = "Parkerad (ankomsttid)")]
         public DateTime ArrivalTime {get { return _date; }
                                      set { _date = value; }}
+        
+        public int MemberId { get; set; }                         // Foreign keys
+
+        public int VehicleTypeId { get; set; }
+
+        public virtual Member Member { get; set; }                // Navigation properties
+        public virtual VehicleType VehicleType { get; set; }
+
+
       }
      
     }
