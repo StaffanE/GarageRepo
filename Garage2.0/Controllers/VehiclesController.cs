@@ -27,8 +27,8 @@ namespace Garage2._0.Controllers
             ViewBag.SearchExpression = searchTerm;
 
             if (searchTerm == null || searchTerm == "")
-            {   
-                return View(db.Vehicles.ToList());  
+            {
+                return View(db.Vehicles.ToList().OrderBy(t => t.Member.FirstName));  
             }
             else
             {
