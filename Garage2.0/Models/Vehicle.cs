@@ -50,7 +50,7 @@ namespace Garage2._0.Models
         [Required(ErrorMessage = "Fordonstyp krävs.")]
         public int VehicleTypeId { get; set; }
 
-
+        [Display(Name = "Ägare / Medlem")] 
         public virtual Member Member { get; set; }                // Navigation properties
 
         [Display(Name = "Fordonstyp")]                           //  Det verkar vara denna som styr displaNameFor i Viewen, ine den i VehicleType-modellen

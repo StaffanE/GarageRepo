@@ -16,7 +16,15 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.VehicleType)
+            @Html.DisplayFor(model => model.VehicleType.TypeOfVehicle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member.FullName)
         </dd>
 
         <dt>
