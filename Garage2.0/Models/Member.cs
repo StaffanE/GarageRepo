@@ -21,7 +21,7 @@ namespace Garage2._0.Models
         [StringLength(32)]
         public string LastName { get; set; }
 
-        [Display(Name = "Namn")]
+        [Display(Name = "Ägare / Medlem")]
         public string FullName 
         { 
             get{

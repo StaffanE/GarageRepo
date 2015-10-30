@@ -44,10 +44,12 @@ namespace Garage2._0.Models
         [Display(Name = "Parkerad (ankomsttid)")]
         public DateTime ArrivalTime {get { return _date; }
                                      set { _date = value; }}
-        
+        [Required(ErrorMessage = "Ägare / Medlem krävs.")]
         public int MemberId { get; set; }                         // Foreign keys
 
+        [Required(ErrorMessage = "Fordonstyp krävs.")]
         public int VehicleTypeId { get; set; }
+
 
         public virtual Member Member { get; set; }                // Navigation properties
 
