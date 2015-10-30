@@ -25,7 +25,7 @@ namespace Garage2._0.Controllers
         public ActionResult Index(string searchTerm = null)
         {
             ViewBag.SearchExpression = searchTerm;
-        
+
             if (searchTerm == null || searchTerm == "")
             {   
                 return View(db.Vehicles.ToList());  
@@ -37,7 +37,6 @@ namespace Garage2._0.Controllers
                     where (v.RegNumber.Contains(searchTerm) || v.Brand.Contains(searchTerm) || v.Color.Contains(searchTerm) || v.Make.Contains(searchTerm) || v.VehicleType.TypeOfVehicle.Contains(searchTerm))
                     //where v.RegNumber == searchTerm
                     select v;
-
                 return View(model);
             }
         }
@@ -91,6 +90,8 @@ namespace Garage2._0.Controllers
         // GET: Vehicles/Create
         public ActionResult Create()
         {
+            ViewBag.VehicleTypes = db.VehicleTypes.ToList();
+            ViewBag.Members = db.Members.ToList();        
             return View();
         }
 
@@ -99,7 +100,7 @@ namespace Garage2._0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VehicleType,RegNumber,Color,Brand,Make,NumberOfWheels,ArrivalTime")] Vehicle vehicle)
+        public ActionResult Create([Bind(Include = "RegNumber,Color,Brand,Make,NumberOfWheels,ArrivalTime, MemberId, VehicleTypeId")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -125,6 +126,8 @@ namespace Garage2._0.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Members = db.Members.ToList(); 
+            ViewBag.VehicleTypes = db.VehicleTypes.ToList();        
             return View(vehicle);
         }
 
@@ -135,7 +138,7 @@ namespace Garage2._0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,VehicleType,RegNumber,Color,Brand,Make,NumberOfWheels,ArrivalTime")] Vehicle vehicle)
+        public ActionResult Edit([Bind(Include = "Id,VehicleTypeId,RegNumber,Color,Brand,Make,NumberOfWheels,ArrivalTime,MemberId")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
