@@ -12,24 +12,37 @@
     TimeSpan pt = dt - Model.ArrivalTime;
 
 
-    if (pt.Hours < 10 && pt.Minutes < 10)
+    //if (pt.Hours < 10 && pt.Minutes < 10)
+    //{
+    //    ViewBag.ParkingTime = "0" + pt.Hours + ":" + "0" + pt.Minutes;
+    //} 
+    //else if (pt.Minutes < 10)
+    //{
+    //    ViewBag.ParkingTime = pt.Hours + ":" + "0" + pt.Minutes;
+    //}     
+    //else if (pt.Hours < 10)
+    //{
+    //    ViewBag.ParkingTime = "0" + pt.Hours + ":" + + pt.Minutes;
+    //}
+    //else
+    //{
+    //    ViewBag.ParkingTime = pt.Hours + "h " + pt.Minutes + "m";
+    //}
+
+    
+    
+    
+    
+
+    if (pt.Minutes < 10)
     {
-        ViewBag.ParkingTime = "0" + pt.Hours + ":" + "0" + pt.Minutes;
-    } 
-    else if (pt.Minutes < 10)
-    {
-        ViewBag.ParkingTime = pt.Hours + ":" + "0" + pt.Minutes;
-    }     
-    else if (pt.Hours < 10)
-    {
-        ViewBag.ParkingTime = "0" + pt.Hours + ":" + + pt.Minutes;
+        ViewBag.ParkingTime = pt.Hours + " h " + "0" + pt.Minutes + " m";
     }
     else
     {
-        ViewBag.ParkingTime = pt.Hours + ":" + pt.Minutes;
+        ViewBag.ParkingTime = pt.Hours + " h " + pt.Minutes + " m";
     }
-        
-        
+               
         
 
     
@@ -71,7 +84,15 @@ body {
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.VehicleType)
+                    @Html.DisplayFor(model => model.VehicleType.TypeOfVehicle)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Member)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Member.FullName)
                 </dd>
 
                 <dt>

@@ -34,6 +34,7 @@ namespace Garage2._0.Models
         [Display(Name = "Personnummer")]
         [Required]
         [StringLength(10)]
+        [MinLength(10, ErrorMessage = "Fältet måste innehålla 10 tecken. ÅÅMMDDXXXX")]
         public string PersonalNumber { get; set; }
 
         [Display(Name = "Telefon")]
