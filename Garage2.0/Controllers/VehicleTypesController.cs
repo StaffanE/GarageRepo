@@ -11,129 +11,107 @@ using Garage2._0.Models;
 
 namespace Garage2._0.Controllers
 {
-    public class MembersController : Controller
+    public class VehicleTypesController : Controller
     {
         private GarageContext db = new GarageContext();
 
-        // GET: Members
-        //public ActionResult Index()
-        //{
-        //    return View(db.Members.ToList());
-        //}
-        public ActionResult Index(string searchTerm = null)
+        // GET: VehicleTypes
+        public ActionResult Index()
         {
-            ViewBag.SearchExpression = searchTerm;
-
-            if (searchTerm == null || searchTerm == "")
-            {
-                return View(db.Members.ToList());
-            }
-            else
-            {
-                var model =
-                    from v in db.Members
-                    where (v.FirstName.Contains(searchTerm) || v.LastName.Contains(searchTerm) || v.PersonalNumber.Contains(searchTerm) || v.PhoneNo.Contains(searchTerm) || v.Adress.Contains(searchTerm) || v.Zipcode.Contains(searchTerm) || v.City.Contains(searchTerm))
-                    //where v.RegNumber == searchTerm
-                    select v;
-                return View(model);
-            }
+            return View(db.VehicleTypes.ToList());
         }
 
-
-
-
-
-        // GET: Members/Details/5
+        // GET: VehicleTypes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Member member = db.Members.Find(id);
-            if (member == null)
+            VehicleType vehicleType = db.VehicleTypes.Find(id);
+            if (vehicleType == null)
             {
                 return HttpNotFound();
             }
-            return View(member);
+            return View(vehicleType);
         }
 
-        // GET: Members/Create
+        // GET: VehicleTypes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Members/Create
+        // POST: VehicleTypes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,PersonalNumber,PhoneNo,Adress,Zipcode,City")] Member member)
+        public ActionResult Create([Bind(Include = "Id,TypeOfVehicle")] VehicleType vehicleType)
         {
             if (ModelState.IsValid)
             {
-                db.Members.Add(member);
+                db.VehicleTypes.Add(vehicleType);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(member);
+            return View(vehicleType);
         }
 
-        // GET: Members/Edit/5
+        // GET: VehicleTypes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Member member = db.Members.Find(id);
-            if (member == null)
+            VehicleType vehicleType = db.VehicleTypes.Find(id);
+            if (vehicleType == null)
             {
                 return HttpNotFound();
             }
-            return View(member);
+            return View(vehicleType);
         }
 
-        // POST: Members/Edit/5
+        // POST: VehicleTypes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,PersonalNumber,PhoneNo,Adress,Zipcode,City")] Member member)
+        public ActionResult Edit([Bind(Include = "Id,TypeOfVehicle")] VehicleType vehicleType)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(member).State = EntityState.Modified;
+                db.Entry(vehicleType).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(member);
+            return View(vehicleType);
         }
 
-        // GET: Members/Delete/5
+        // GET: VehicleTypes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Member member = db.Members.Find(id);
-            if (member == null)
+            VehicleType vehicleType = db.VehicleTypes.Find(id);
+            if (vehicleType == null)
             {
                 return HttpNotFound();
             }
-            return View(member);
+            return View(vehicleType);
         }
 
-        // POST: Members/Delete/5
+        // POST: VehicleTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Member member = db.Members.Find(id);
-            db.Members.Remove(member);
+            VehicleType vehicleType = db.VehicleTypes.Find(id);
+            db.VehicleTypes.Remove(vehicleType);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
