@@ -50,6 +50,8 @@ namespace Garage2._0.Models
         public int VehicleTypeId { get; set; }
 
         public virtual Member Member { get; set; }                // Navigation properties
+
+        [Display(Name = "Fordonstyp")]                           //  Det verkar vara denna som styr displaNameFor i Viewen, ine den i VehicleType-modellen
         public virtual VehicleType VehicleType { get; set; }
 
 

@@ -27,22 +27,14 @@ namespace Garage2._0.Controllers
             ViewBag.SearchExpression = searchTerm;
         
             if (searchTerm == null || searchTerm == "")
-            {   //SELECT RegNumber, TypeOfVehicle, FirstName, LastName FROM Vehicles INNER JOIN VehicleTypes ON VehicleTypes.Id=Vehicles.VehicleTypeId INNER JOIN Members ON Members.Id=Vehicles.MemberId;
-                //return View(db.Vehicles.ToList());  
-                var model = from v in db.Vehicles
-                          join vt in db.VehicleTypes on v.VehicleTypeId equals vt.Id 
-                         join mb in db.Members on v.MemberId equals mb.Id
-                            select new { RegNumber = v.RegNumber, TypeOfVehicle = vt.TypeOfVehicle, FirstName= mb.FirstName, LastName = mb.LastName}; 
-                //return View(db.Vehicles.ToList());  
-                //RegNumber, TypeOfVehicle, FirstName, LastName 
-                //select v;
-              return View(model);
+            {   
+                return View(db.Vehicles.ToList());  
             }
             else
             {
                 var model =
                     from v in db.Vehicles
-                    where (v.RegNumber.Contains(searchTerm) || v.Brand.Contains(searchTerm) || v.Color.Contains(searchTerm) || v.Make.Contains(searchTerm))
+                    where (v.RegNumber.Contains(searchTerm) || v.Brand.Contains(searchTerm) || v.Color.Contains(searchTerm) || v.Make.Contains(searchTerm) || v.VehicleType.TypeOfVehicle.Contains(searchTerm))
                     //where v.RegNumber == searchTerm
                     select v;
 
