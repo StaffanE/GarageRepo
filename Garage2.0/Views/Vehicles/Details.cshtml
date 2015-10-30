@@ -6,8 +6,25 @@
 
 <h2>Fordonsuppgifter</h2>
 
+
+<div id="block_container">
+        <div id="block1">
+            <h4>Aktuellt fordon</h4>
+            @*<button onclick="location.href='@Url.Action("Create", "Vehicles")'"> Parkera fordon </button>*@
+        </div>
+ 
+    <div id="block2">
+        <form method="get" action="~/Vehicles/">
+            <input type="search" name="searchTerm" class="searchform" value="@ViewBag.SearchExpression" style="display:inline" />
+            <input type="submit" value="Sök" style="display:inline" />
+        </form>
+    </div>
+</div>
+
+
+
 <div>
-    <h4>Aktuellt fordon</h4>
+   
     <hr />
     <dl class="dl-horizontal">
         <dt>
